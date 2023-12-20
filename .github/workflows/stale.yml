@@ -17,8 +17,8 @@ jobs:
         run: |
           git config --local user.email "icryblade@gmail.com"
           git config --local user.name "icryblade"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git pull --rebase
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
           git commit --allow-empty -m "使用您的 GitHub 活动数据作为开发人员活动的度量"
           git push
       - name: Release
